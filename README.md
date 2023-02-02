@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Develop
+新增引入moment，xlsx，patch-package包
+project：对execl导入导出进行开发，将一整个excel sheet，按照物料名称分为多个sheet
+route：/calculator
+owner：lhy

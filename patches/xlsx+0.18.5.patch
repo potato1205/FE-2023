@@ -1,0 +1,33 @@
+diff --git a/node_modules/xlsx/dist/xlsx.extendscript.js b/node_modules/xlsx/dist/xlsx.extendscript.js
+index 3a99f3a..bf81b91 100644
+--- a/node_modules/xlsx/dist/xlsx.extendscript.js
++++ b/node_modules/xlsx/dist/xlsx.extendscript.js
+@@ -24146,6 +24146,7 @@ function sheet_to_json(sheet, opts) {
+ 	var out = [];
+ 	var outi = 0, counter = 0;
+ 	var dense = Array.isArray(sheet);
++	console.log("dense: ", dense);
+ 	var R = r.s.r, C = 0;
+ 	var header_cnt = {};
+ 	if(dense && !sheet[R]) sheet[R] = [];
+diff --git a/node_modules/xlsx/xlsx.js b/node_modules/xlsx/xlsx.js
+index e61c7cc..d3d0ff3 100644
+--- a/node_modules/xlsx/xlsx.js
++++ b/node_modules/xlsx/xlsx.js
+@@ -13,6 +13,8 @@ else if(typeof module !== "undefined" && typeof require !== 'undefined') {
+ 	$cptable = require('./dist/cpexcel.js');
+ }
+ 
++console.log("patch-package修改成功");
++
+ var VALID_ANSI = [ 874, 932, 936, 949, 950, 1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, 10000 ];
+ /* ECMA-376 Part I 18.4.1 charset to codepage mapping */
+ var CS2CP = ({
+@@ -23990,6 +23992,7 @@ function sheet_to_json(sheet, opts) {
+ 	var out = [];
+ 	var outi = 0, counter = 0;
+ 	var dense = Array.isArray(sheet);
++	console.log("dense: ", dense);
+ 	var R = r.s.r, C = 0;
+ 	var header_cnt = {};
+ 	if(dense && !sheet[R]) sheet[R] = [];
