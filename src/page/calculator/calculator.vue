@@ -40,7 +40,6 @@ export default class Calculator extends Vue {
         const params: any = [];
         // 取对应表生成json表格内容
         workbook.SheetNames.forEach((item: any) => {
-          console.log("workbook.Sheets[item]: ", workbook.Sheets[item]);
           params.push({
             name: item,
             dataList: utils.sheet_to_json(workbook.Sheets[item], {
@@ -53,8 +52,6 @@ export default class Calculator extends Vue {
             }) as never
           );
         });
-        console.log("this.tableData: ", this.tableData);
-        console.log("params: ", params);
         this.excelChangeArr = this.dealExcelData(params[0].dataList);
         // 该算法仅针对表头无合并的情况
         if (this.tableData.length > 0) {
@@ -64,7 +61,6 @@ export default class Calculator extends Vue {
             this.tableHead.push(key as never);
           }
         }
-        console.log("this.tableHead: ", this.tableHead);
         return params;
         // 重写数据
       } catch (e) {
